@@ -1,0 +1,15 @@
+{
+  "engagement_id": "hydra-test-eng",
+  "engagement_name": "Hydra Quick Test",
+  "version": 2,
+  "targets": ["172.30.36.3"],
+  "excluded_targets": [],
+  "start_time": "2026-07-01T00:00:00+00:00",
+  "end_time": "2026-07-31T23:59:59+00:00",
+  "allowed_attack_classes": ["network"],
+  "authorization_contact": {"name": "test", "email": "test@test.com", "role": "tester"},
+  "emergency_contact": "test",
+  "rate_limit": null,
+  "notify_before_exploit": false,
+  "created_at": "2026-07-14T00:00:00.000000"
+}

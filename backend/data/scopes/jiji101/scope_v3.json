@@ -1,0 +1,25 @@
+{
+  "engagement_id": "jiji101",
+  "engagement_name": "justchecking",
+  "version": 3,
+  "targets": [
+    "45.33.32.156",
+    "scanme.nmap.org"
+  ],
+  "excluded_targets": [],
+  "start_time": "2026-07-11T18:30:00+00:00",
+  "end_time": "2026-07-11T19:30:00+00:00",
+  "allowed_attack_classes": [
+    "recon",
+    "web"
+  ],
+  "authorization_contact": {
+    "name": "dwckn",
+    "email": "wdcondwc@gmail.com",
+    "role": "wdcjndw"
+  },
+  "emergency_contact": "wjndwc",
+  "rate_limit": null,
+  "notify_before_exploit": true,
+  "created_at": "2026-07-11T18:39:47.553629"
+}

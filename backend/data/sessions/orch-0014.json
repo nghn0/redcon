@@ -1,0 +1,30 @@
+{
+  "session_id": "orch-0014",
+  "engagement_id": "echk-tools",
+  "goal": "assess the security of example.com",
+  "created_at": "2026-08-11T07:47:06.706051+00:00",
+  "updated_at": "2026-08-11T07:47:28.449743+00:00",
+  "status": "active",
+  "findings_so_far": [],
+  "tools_already_run": [],
+  "pending_or_denied": [],
+  "action_history": [
+    {
+      "type": "chat",
+      "content": "To assess the security of example.com, I will start with a basic reconnaissance phase to gather as much information as possible without causing any harm. What do you think about starting with DNS enumeration?",
+      "timestamp": "2026-08-11T07:47:21.809417+00:00"
+    },
+    {
+      "type": "user",
+      "content": "What tools are currently installed?",
+      "timestamp": "2026-08-11T07:47:21.833100+00:00"
+    },
+    {
+      "type": "chat",
+      "content": "The following tools are currently installed on the platform: subfinder, nmap, gobuster, nuclei, sqlmap, and nikto.",
+      "timestamp": "2026-08-11T07:47:28.449666+00:00"
+    }
+  ],
+  "investigation": null,
+  "auto_drive": false
+}

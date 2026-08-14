@@ -1,0 +1,21 @@
+{
+  "apr-0001": {
+    "approval_id": "apr-0001",
+    "engagement_id": "jiji101",
+    "tool_name": "nikto",
+    "params": {
+      "maxtime": "2m",
+      "target": "scanme.nmap.org",
+      "port": "80"
+    },
+    "risk_tier": "active_scan",
+    "attack_class": "web",
+    "target": "scanme.nmap.org",
+    "requested_at": "2026-08-10T09:15:19.412995+00:00",
+    "status": "approved",
+    "decided_by": "ui-user",
+    "decided_at": "2026-08-10T09:15:27.945726+00:00",
+    "deny_reason": null,
+    "result_job_id": "sbox-0016"
+  }
+}

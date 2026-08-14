@@ -1,0 +1,15 @@
+.pytest_cache/
+__pycache__/
+*.pyc
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+ai-redteam-platform-hld-v2.md
+ans.md
+info.md
+status.md
+.DS_Store
+backend/.pytest_cache/
+backend/__pycache__/

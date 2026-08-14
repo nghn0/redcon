@@ -1,0 +1,23 @@
+{
+  "engagement_id": "sub-verify",
+  "engagement_name": "Subfinder Verify",
+  "targets": [
+    "scanme.nmap.org"
+  ],
+  "excluded_targets": [],
+  "start_time": "2026-01-01T00:00:00+00:00",
+  "end_time": "2030-01-01T00:00:00+00:00",
+  "allowed_attack_classes": [
+    "recon"
+  ],
+  "rate_limit": null,
+  "authorization_contact": {
+    "name": "T",
+    "email": "t@t.com",
+    "role": "tester"
+  },
+  "emergency_contact": "tester",
+  "notify_before_exploit": false,
+  "version": 1,
+  "created_at": "2026-07-11T19:58:57.065709"
+}

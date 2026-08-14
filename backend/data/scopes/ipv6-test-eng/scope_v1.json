@@ -1,0 +1,29 @@
+{
+  "engagement_id": "ipv6-test-eng",
+  "engagement_name": "Test ipv6-test-eng",
+  "targets": [
+    "45.33.32.156",
+    "2600:3c01::f03c:91ff:fe18:bb2f",
+    "2001:db8::/32"
+  ],
+  "excluded_targets": [
+    "2001:db8::5"
+  ],
+  "start_time": "2026-01-01T00:00:00+00:00",
+  "end_time": "2030-01-01T00:00:00+00:00",
+  "allowed_attack_classes": [
+    "recon",
+    "web",
+    "network"
+  ],
+  "authorization_contact": {
+    "name": "Tester",
+    "email": "t@t.com",
+    "role": "tester"
+  },
+  "emergency_contact": "tester",
+  "rate_limit": null,
+  "notify_before_exploit": false,
+  "version": 1,
+  "created_at": "2026-07-11T18:51:22.724735"
+}

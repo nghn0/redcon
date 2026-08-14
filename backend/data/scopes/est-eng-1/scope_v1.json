@@ -1,0 +1,27 @@
+{
+  "engagement_id": "est-eng-1",
+  "engagement_name": "Checking",
+  "version": 1,
+  "targets": [
+    "203.0.113.0/24",
+    "test.example.com"
+  ],
+  "excluded_targets": [
+    "203.0.113.5"
+  ],
+  "start_time": "2026-07-10T18:13:00+00:00",
+  "end_time": "2026-07-10T19:15:00+00:00",
+  "allowed_attack_classes": [
+    "recon",
+    "web"
+  ],
+  "authorization_contact": {
+    "name": "nithish",
+    "email": "1@gmail.com",
+    "role": "main"
+  },
+  "emergency_contact": "9535450468",
+  "rate_limit": null,
+  "notify_before_exploit": true,
+  "created_at": "2026-07-10T18:15:30.125201"
+}

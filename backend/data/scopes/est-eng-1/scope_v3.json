@@ -1,0 +1,24 @@
+{
+  "engagement_id": "est-eng-1",
+  "engagement_name": "Checking",
+  "version": 3,
+  "targets": [
+    "test.example.com"
+  ],
+  "excluded_targets": [],
+  "start_time": "2026-07-10T18:25:00+00:00",
+  "end_time": "2026-07-17T18:25:00+00:00",
+  "allowed_attack_classes": [
+    "recon",
+    "web"
+  ],
+  "authorization_contact": {
+    "name": "wxsw",
+    "email": "wecd@indce",
+    "role": "edcjkn"
+  },
+  "emergency_contact": "edcjnd",
+  "rate_limit": null,
+  "notify_before_exploit": true,
+  "created_at": "2026-07-10T18:27:32.788300"
+}

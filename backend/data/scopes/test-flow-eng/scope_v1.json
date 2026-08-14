@@ -1,0 +1,26 @@
+{
+  "engagement_id": "test-flow-eng",
+  "engagement_name": "Test test-flow-eng",
+  "targets": [
+    "203.0.113.0/24",
+    "test-target.local"
+  ],
+  "excluded_targets": [],
+  "start_time": "2026-01-01T00:00:00+00:00",
+  "end_time": "2030-01-01T00:00:00+00:00",
+  "allowed_attack_classes": [
+    "recon",
+    "web",
+    "network"
+  ],
+  "authorization_contact": {
+    "name": "Tester",
+    "email": "t@t.com",
+    "role": "tester"
+  },
+  "emergency_contact": "tester",
+  "rate_limit": null,
+  "notify_before_exploit": false,
+  "version": 1,
+  "created_at": "2026-07-11T17:01:50.855459"
+}

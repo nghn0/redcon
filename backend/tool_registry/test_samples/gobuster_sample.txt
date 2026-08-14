@@ -1,0 +1,33 @@
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://demo.testfire.net
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+admin                (Status: 302) [Size: 0] [--> /login.jsp]
+aux                  (Status: 200) [Size: 0]
+bank                 (Status: 302) [Size: 0] [--> /login.jsp]
+com3                 (Status: 200) [Size: 0]
+images               (Status: 302) [Size: 0] [--> /images/]
+index.jsp            (Status: 200) [Size: 147]
+login.jsp            (Status: 302) [Size: 0] [--> /login.jsp]
+favicon.ico          (Status: 200) [Size: 1406]
+privacy.jsp          (Status: 200) [Size: 120]
+redirect.jsp         (Status: 302) [Size: 0] [--> /login.jsp]
+search.jsp           (Status: 200) [Size: 89]
+server-status        (Status: 200) [Size: 0]
+WEB-INF              (Status: 302) [Size: 0] [--> /WEB-INF/]
+robots.txt           (Status: 200) [Size: 50]
+crossdomain.xml      (Status: 200) [Size: 45]
+about.jsp            (Status: 200) [Size: 100]
+===============================================================
+Finished
+===============================================================

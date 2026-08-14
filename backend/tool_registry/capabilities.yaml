@@ -1,0 +1,146 @@
+# Capability catalog — the vocabulary of the investigation engine.
+#
+# The reasoning loop (planner + LLM) works exclusively in these identifiers.
+# Tools advertise which capabilities they can fulfil (see tools.yaml);
+# the Capability Resolver maps a required capability to a concrete tool.
+#
+# Adding a capability requires ONLY this file (new key) + assigning registers
+# in a tool's `capabilities` list. No planner / prompt / reasoning changes.
+#
+# Fields:
+#   description   — what the capability produces, for prompt/schema context
+#   category      — coarse grouping (discovery | fingerprint | audit | attack)
+#   default_cost  — relative execution cost 0..1 used when heuristics have no
+#                   tool-specific figure
+#   default_risk  — approval tier for a generic implementation (passive |
+#                   active_scan | exploit); tools may override per-instance
+#   default_gain  — expected information gain 0..1 for scoring fallback
+#   phase         — natural investigation phase this capability serves
+
+network_discovery:
+  description: "Discover the network surface: reachable hosts, open ports and running services"
+  category: discovery
+  default_cost: 0.2
+  default_risk: passive
+  default_gain: 0.9
+  phase: recon
+
+service_enumeration:
+  description: "Enumerate and fingerprint open services and their versions"
+  category: fingerprint
+  default_cost: 0.3
+  default_risk: passive
+  default_gain: 0.8
+  phase: service_enum
+
+technology_detection:
+  description: "Identify web technologies, frameworks and middleware behind a web target"
+  category: fingerprint
+  default_cost: 0.4
+  default_risk: active_scan
+  default_gain: 0.8
+  phase: web_recon
+
+subdomain_enumeration:
+  description: "Enumerate subdomains of an authorized domain via passive and active sources"
+  category: discovery
+  default_cost: 0.1
+  default_risk: passive
+  default_gain: 0.7
+  phase: recon
+
+directory_discovery:
+  description: "Map directories and files on a web application"
+  category: discovery
+  default_cost: 0.4
+  default_risk: active_scan
+  default_gain: 0.75
+  phase: web_recon
+
+content_discovery:
+  description: "Discover content, backups and hidden files on a web target"
+  category: discovery
+  default_cost: 0.4
+  default_risk: active_scan
+  default_gain: 0.7
+  phase: web_recon
+
+web_server_audit:
+  description: "Audit a web server for misconfigurations and hardening gaps"
+  category: audit
+  default_cost: 0.6
+  default_risk: active_scan
+  default_gain: 0.5
+  phase: web_recon
+
+vulnerability_detection:
+  description: "Scan for known vulnerabilities using curated templates and signatures"
+  category: audit
+  default_cost: 0.6
+  default_risk: active_scan
+  default_gain: 0.7
+  phase: web_recon
+
+sql_injection_validation:
+  description: "Confirm and characterize SQL injection on a web endpoint"
+  category: attack
+  default_cost: 0.8
+  default_risk: active_scan
+  default_gain: 0.8
+  phase: exploitation
+
+credential_attack:
+  description: "Test exposed services for weak, common or default credentials"
+  category: attack
+  default_cost: 0.9
+  default_risk: exploit
+  default_gain: 0.6
+  phase: exploitation
+
+dns_enumeration:
+  description: "Enumerate DNS records of an authorized domain"
+  category: discovery
+  default_cost: 0.1
+  default_risk: passive
+  default_gain: 0.5
+  phase: recon
+
+tls_analysis:
+  description: "Inspect TLS/SSL certificate and configuration of a TLS service"
+  category: audit
+  default_cost: 0.3
+  default_risk: passive
+  default_gain: 0.5
+  phase: service_enum
+
+cms_enumeration:
+  description: "Detect and fingerprint an installed content management system"
+  category: fingerprint
+  default_cost: 0.4
+  default_risk: active_scan
+  default_gain: 0.6
+  phase: web_recon
+
+javascript_discovery:
+  description: "Discover and extract JavaScript assets and embedded application hints"
+  category: discovery
+  default_cost: 0.3
+  default_risk: active_scan
+  default_gain: 0.5
+  phase: web_recon
+
+crawling:
+  description: "Crawl a web application to discover routes, endpoints and relationships"
+  category: discovery
+  default_cost: 0.6
+  default_risk: active_scan
+  default_gain: 0.6
+  phase: web_recon
+
+api_discovery:
+  description: "Discover API endpoints, schemas and documentation on a web target"
+  category: discovery
+  default_cost: 0.4
+  default_risk: active_scan
+  default_gain: 0.6
+  phase: web_recon

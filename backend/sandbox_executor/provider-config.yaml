@@ -1,0 +1,55 @@
+# Subfinder provider configuration
+# ==========================================
+# 1️⃣ Remove the '#' to enable a source
+# 2️⃣ Replace YOUR_API_KEY with your actual key
+# 3️⃣ Run setup_subfinder_keys.sh for guided setup
+#
+# Free API signup URLs (no credit card needed):
+#   SecurityTrails  → https://securitytrails.com
+#   AlienVault OTX  → https://otx.alienvault.com
+#   URLScan.io      → https://urlscan.io
+#   VirusTotal      → https://virustotal.com
+#   Shodan          → https://shodan.io
+#   GitHub          → https://github.com (PAT with no scopes)
+# ==========================================
+
+# --- Keyless sources (work without keys) ---
+crtsh: []
+digitorus: []
+hudsonrock: []
+rapiddns: []
+sitedossier: []
+threatcrowd: []
+waybackarchive: []
+
+# --- Sources with free API keys ---
+# securitytrails:
+#   - YOUR_SECURITYTRAILS_KEY
+
+# alienvault:
+#   - YOUR_ALIENVAULT_KEY
+
+# urlscan:
+#   - YOUR_URLSCAN_KEY
+
+# virustotal:
+#   - YOUR_VIRUSTOTAL_KEY
+
+# shodan:
+#   - YOUR_SHODAN_KEY
+
+# github:
+#   - YOUR_GITHUB_PAT
+
+# hackertarget:
+#   - YOUR_HACKERTARGET_KEY
+
+# fullhunt:
+#   - YOUR_FULLHUNT_KEY
+
+# intelx:
+#   - YOUR_INTELX_KEY
+
+# censys:
+#   - YOUR_CENSYS_ID
+#   - YOUR_CENSYS_SECRET

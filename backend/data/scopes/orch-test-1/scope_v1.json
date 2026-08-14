@@ -1,0 +1,26 @@
+{
+  "engagement_id": "orch-test-1",
+  "engagement_name": "Orch Test",
+  "version": 1,
+  "targets": [
+    "scanme.nmap.org",
+    "127.0.0.1"
+  ],
+  "excluded_targets": [],
+  "start_time": "2025-01-01T00:00:00",
+  "end_time": "2030-01-01T00:00:00",
+  "allowed_attack_classes": [
+    "recon",
+    "web",
+    "network"
+  ],
+  "authorization_contact": {
+    "name": "T",
+    "email": "t@t.com",
+    "role": "t"
+  },
+  "emergency_contact": "t",
+  "rate_limit": null,
+  "notify_before_exploit": null,
+  "created_at": "2026-07-21T10:31:51.270100"
+}

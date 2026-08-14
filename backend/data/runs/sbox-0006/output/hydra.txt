@@ -1,0 +1,1 @@
+# Hydra v9.2 run at 2026-08-06 18:27:22 on scanme.nmap.org ssh (hydra -L /usr/share/wordlists/hydra-quick-users.txt -P /usr/share/wordlists/hydra-quick-passwords.txt -t 4 -W 2 -o /output/hydra.txt scanme.nmap.org ssh)

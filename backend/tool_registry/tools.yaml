@@ -1,0 +1,162 @@
+- name: nmap
+  execution_environment: sandbox
+  capabilities: [network_discovery, service_enumeration]
+  priority: 100
+  confidence: 0.95
+  supported_platforms: [darwin, linux]
+  verification_command: "nmap --version"
+  risk_tier: passive
+  attack_class: recon
+  description: "Port and service scanner"
+  command_template: ["nmap", "-sV", "-p", "{ports}", "-T4", "--max-retries", "2", "--host-timeout", "30m", "{target}"]
+  allowed_params:
+    target: "ip_or_domain"
+    ports: "port_range"
+  required_params:
+    - target
+  output_parser: "nmap_parser"
+  binary_name: "nmap"
+  install_command: "brew install nmap"
+  timeout: 3600
+
+- name: subfinder
+  execution_environment: sandbox
+  capabilities: [subdomain_enumeration, dns_enumeration]
+  priority: 95
+  confidence: 0.9
+  supported_platforms: [darwin, linux]
+  verification_command: "subfinder -version"
+  risk_tier: passive
+  attack_class: recon
+  description: "Passive subdomain discovery tool"
+  command_template: ["subfinder", "-d", "{target}", "-silent", "-all"]
+  allowed_params:
+    target: "domain"
+  required_params:
+    - target
+  output_parser: "subfinder_parser"
+  binary_name: "subfinder"
+  install_command: "go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest"
+  egress_restricted: false
+  timeout: 600
+
+- name: nuclei
+  execution_environment: sandbox
+  capabilities: [technology_detection, vulnerability_detection]
+  priority: 95
+  confidence: 0.9
+  supported_platforms: [darwin, linux]
+  verification_command: "nuclei -version"
+  risk_tier: active_scan
+  attack_class: web
+  description: "Template-based vulnerability scanner"
+  command_template: ["nuclei", "-u", "{target}", "-t", "{template}", "-jsonl", "-silent"]
+  allowed_params:
+    target: "ip_or_domain"
+    template: "file_path"
+  required_params:
+    - target
+  defaults:
+    template: "/root/nuclei-templates/http/technologies/"
+  output_parser: "nuclei_parser"
+  binary_name: "nuclei"
+  install_command: "go install github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest"
+  timeout: 1800
+
+- name: gobuster
+  execution_environment: sandbox
+  capabilities: [directory_discovery, content_discovery]
+  priority: 90
+  confidence: 0.85
+  supported_platforms: [darwin, linux]
+  verification_command: "gobuster version"
+  risk_tier: active_scan
+  attack_class: web
+  description: "Directory/file/DNS brute-forcer"
+  command_template: ["gobuster", "{mode}", "-u", "{target}", "-w", "{wordlist}"]
+  allowed_params:
+    target: "url"
+    wordlist: "file_path"
+    mode: "gobuster_mode"
+  required_params:
+    - target
+    - wordlist
+  defaults:
+    wordlist: "/usr/share/wordlists/common.txt"
+    mode: "dir"
+  output_parser: "gobuster_parser"
+  binary_name: "gobuster"
+  install_command: "go install github.com/OJ/gobuster/v3@latest"
+  timeout: 1800
+
+- name: nikto
+  execution_environment: sandbox
+  capabilities: [web_server_audit]
+  priority: 85
+  confidence: 0.8
+  supported_platforms: [darwin, linux]
+  verification_command: "nikto -Version"
+  risk_tier: active_scan
+  attack_class: web
+  description: "Web server scanner"
+  command_template: ["nikto", "-h", "{target}", "-port", "{port}", "-maxtime", "{maxtime}"]
+  allowed_params:
+    target: "ip_or_domain"
+    port: "port"
+    maxtime: "nikto_maxtime"
+  required_params:
+    - target
+  defaults:
+    maxtime: "10m"
+  output_parser: "nikto_parser"
+  binary_name: "nikto"
+  install_command: "brew install nikto"
+  timeout: 900
+
+- name: sqlmap
+  execution_environment: sandbox
+  capabilities: [sql_injection_validation]
+  priority: 100
+  confidence: 0.9
+  supported_platforms: [darwin, linux]
+  verification_command: "sqlmap --version"
+  risk_tier: active_scan
+  attack_class: web
+  description: "SQL injection automation tool"
+  command_template: ["sqlmap", "-u", "{target}", "--batch", "--random-agent"]
+  allowed_params:
+    target: "url"
+  required_params:
+    - target
+  output_parser: "sqlmap_parser"
+  binary_name: "sqlmap"
+  install_command: "pip install sqlmap"
+  timeout: 1200
+
+- name: hydra
+  execution_environment: sandbox
+  capabilities: [credential_attack]
+  priority: 95
+  confidence: 0.85
+  supported_platforms: [darwin, linux]
+  verification_command: "hydra -h"
+  risk_tier: active_scan
+  attack_class: network
+  description: "Network login brute-forcer"
+  command_template: ["hydra", "-L", "{username_list}", "-P", "{password_list}", "{target}", "{service}"]
+  allowed_params:
+    target: "ip_or_domain"
+    username_list: "file_path"
+    password_list: "file_path"
+    service: "hydra_service"
+  required_params:
+    - target
+    - username_list
+    - password_list
+  defaults:
+    username_list: "/usr/share/wordlists/hydra-quick-users.txt"
+    password_list: "/usr/share/wordlists/hydra-quick-passwords.txt"
+  output_parser: "hydra_parser"
+  binary_name: "hydra"
+  install_command: "brew install hydra"
+  timeout: 900

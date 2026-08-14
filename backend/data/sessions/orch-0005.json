@@ -1,0 +1,124 @@
+{
+  "session_id": "orch-0005",
+  "engagement_id": "jiji101",
+  "goal": "using namp scan scanme.nmap.org this website for me",
+  "created_at": "2026-08-07T07:51:01.292234+00:00",
+  "updated_at": "2026-08-10T06:54:51.143240+00:00",
+  "status": "pending_approval",
+  "findings_so_far": [
+    {
+      "type": "port_open",
+      "detail": {
+        "port": 22,
+        "protocol": "tcp",
+        "state": "open",
+        "service": "ssh",
+        "version": "OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)"
+      },
+      "_tool": "nmap",
+      "_job_id": "sbox-0009"
+    },
+    {
+      "type": "port_open",
+      "detail": {
+        "port": 80,
+        "protocol": "tcp",
+        "state": "open",
+        "service": "http",
+        "version": "Apache httpd 2.4.7 ((Ubuntu))"
+      },
+      "_tool": "nmap",
+      "_job_id": "sbox-0009"
+    }
+  ],
+  "tools_already_run": [
+    "nmap",
+    "nuclei"
+  ],
+  "pending_or_denied": [
+    {
+      "type": "action",
+      "tool_name": "nuclei",
+      "params": {
+        "target": "scanme.nmap.org",
+        "template": "/root/nuclei-templates/http/technologies/"
+      },
+      "target": "scanme.nmap.org",
+      "outcome": "approved",
+      "approval_id": "apr-0001",
+      "timestamp": "2026-08-07T07:54:23.552862+00:00",
+      "job_id": "sbox-0010"
+    }
+  ],
+  "action_history": [
+    {
+      "type": "chat",
+      "content": "I will perform a passive port and service scan on scanme.nmap.org using Nmap. Are you okay with that?",
+      "timestamp": "2026-08-07T07:51:15.475920+00:00"
+    },
+    {
+      "type": "user",
+      "content": "which port nuber r u using?",
+      "timestamp": "2026-08-07T07:51:41.056731+00:00"
+    },
+    {
+      "type": "chat",
+      "content": "Ports: default is `1-65535`. OK, or which ports do you want?",
+      "timestamp": "2026-08-07T07:51:43.150020+00:00"
+    },
+    {
+      "type": "user",
+      "content": "no use from 1-100",
+      "timestamp": "2026-08-07T07:52:31.823547+00:00"
+    },
+    {
+      "type": "chat",
+      "content": "Ports: 1-100. Do you want to proceed with this scan?",
+      "timestamp": "2026-08-07T07:52:33.793060+00:00"
+    },
+    {
+      "type": "user",
+      "content": "yes",
+      "timestamp": "2026-08-07T07:52:39.362700+00:00"
+    },
+    {
+      "type": "action",
+      "tool_name": "nmap",
+      "params": {
+        "target": "scanme.nmap.org",
+        "ports": "1-100"
+      },
+      "target": "scanme.nmap.org",
+      "outcome": "completed",
+      "job_id": "sbox-0009",
+      "timestamp": "2026-08-07T07:52:42.574178+00:00",
+      "exit_code": 0
+    },
+    {
+      "type": "chat",
+      "content": "Based on the findings, it seems that scanme.nmap.org has SSH and HTTP services running. What would you like to do next? Do you want to proceed with further active scanning using Nuclei?",
+      "timestamp": "2026-08-07T07:52:58.731065+00:00"
+    },
+    {
+      "type": "user",
+      "content": "ok then proceed",
+      "timestamp": "2026-08-07T07:54:19.757245+00:00"
+    },
+    {
+      "type": "action",
+      "tool_name": "nuclei",
+      "params": {
+        "target": "scanme.nmap.org",
+        "template": "/root/nuclei-templates/http/technologies/"
+      },
+      "target": "scanme.nmap.org",
+      "outcome": "error",
+      "approval_id": "apr-0001",
+      "timestamp": "2026-08-07T07:54:23.552862+00:00",
+      "job_id": "sbox-0010",
+      "exit_code": 2
+    }
+  ],
+  "auto_drive": true,
+  "_pending_approval_id": null
+}

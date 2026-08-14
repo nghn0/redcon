@@ -1,0 +1,26 @@
+{
+  "engagement_id": "dns-fix-test",
+  "engagement_name": "DNS Fix Test",
+  "targets": [
+    "45.33.32.156",
+    "scanme.nmap.org"
+  ],
+  "excluded_targets": [],
+  "start_time": "2026-01-01T00:00:00+00:00",
+  "end_time": "2030-01-01T00:00:00+00:00",
+  "allowed_attack_classes": [
+    "recon",
+    "web",
+    "network"
+  ],
+  "authorization_contact": {
+    "name": "T",
+    "email": "t@t.com",
+    "role": "tester"
+  },
+  "emergency_contact": "tester",
+  "rate_limit": null,
+  "notify_before_exploit": false,
+  "version": 2,
+  "created_at": "2026-07-11T19:05:52.621177"
+}

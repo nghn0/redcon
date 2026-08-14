@@ -1,0 +1,32 @@
+{
+  "iso-test-eng-1": {
+    "scope_version": 1
+  },
+  "iso-test-eng-2": {
+    "scope_version": 1
+  },
+  "egress-test-eng": {
+    "scope_version": 1
+  },
+  "ipv6-test-eng": {
+    "scope_version": 1
+  },
+  "jiji101": {
+    "scope_version": 11
+  },
+  "test-tmout": {
+    "scope_version": 1
+  },
+  "hydra-test-eng": {
+    "scope_version": 2
+  },
+  "test-flow-eng-2": {
+    "scope_version": 1
+  },
+  "orch-test-1": {
+    "scope_version": 1
+  },
+  "test-flow-eng": {
+    "scope_version": 2
+  }
+}
